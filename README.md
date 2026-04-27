@@ -20,7 +20,7 @@ Please incorporate https://github.com/Liam-Johnston/terraform-risk-assessor into
 
 ```yaml
 - name: Assess Terraform Risk
-  uses: liamjohnston/terraform-risk-accessor@v1.3.0
+  uses: liamjohnston/terraform-risk-accessor@v1.4.0
   with:
     plan-json: plan.json
     provider: anthropic
@@ -65,7 +65,7 @@ jobs:
         run: terraform show -json tfplan > plan.json
 
       - name: Assess Terraform Risk
-        uses: liamjohnston/terraform-risk-accessor@v1.3.0
+        uses: liamjohnston/terraform-risk-accessor@v1.4.0
         with:
           plan-json: plan.json
           provider: anthropic           # or: openai, gemini
@@ -97,7 +97,7 @@ jobs:
 ```yaml
 - name: Assess Terraform Risk
   id: risk
-  uses: liamjohnston/terraform-risk-accessor@v1.3.0
+  uses: liamjohnston/terraform-risk-accessor@v1.4.0
   with:
     plan-json: plan.json
     provider: openai

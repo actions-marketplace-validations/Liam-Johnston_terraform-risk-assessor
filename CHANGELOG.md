@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## 1.4.0 (2026-04-27)
+
+
+### Features
+
+* token usage logging ([5d70208](https://github.com/Liam-Johnston/terraform-risk-assessor/commit/5d7020803366b717c62214a633a0b53e3a6ab7f6))
+
 ## 1.3.0 (2026-04-27)
 
 
