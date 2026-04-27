@@ -2,6 +2,7 @@
   "name": "terraform-risk-accessor",
   "version": "1.2.0",
   "description": "GitHub Action that uses AI to assess risk in Terraform plan changes",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "bun build src/index.ts --target=node --outfile=dist/index.js --minify",
