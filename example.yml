@@ -1,0 +1,41 @@
+name: Terraform Risk Assessment
+
+on:
+  pull_request:
+    paths:
+      - "**/*.tf"
+      - "**/*.tfvars"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  risk-assessment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Convert Plan to JSON
+        run: terraform show -json tfplan > plan.json
+
+      - name: Assess Terraform Risk
+        uses: liamjohnston/terraform-risk-accessor@main
+        with:
+          plan-json: plan.json
+          provider: anthropic           # or: openai, gemini
+          api-key: ${{ secrets.AI_API_KEY }}
+          model: claude-sonnet-4-20250514  # or: gpt-4o, gemini-2.0-flash
+          comment-on-pr: "true"

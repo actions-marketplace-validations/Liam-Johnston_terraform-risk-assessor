@@ -1,0 +1,19 @@
+{
+  "name": "terraform-risk-accessor",
+  "version": "1.0.0",
+  "description": "GitHub Action that uses AI to assess risk in Terraform plan changes",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build src/index.ts --target=node --outfile=dist/index.js --minify",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3"
+  }
+}
