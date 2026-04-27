@@ -1,6 +1,6 @@
 {
   "name": "terraform-risk-accessor",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "GitHub Action that uses AI to assess risk in Terraform plan changes",
   "type": "module",
   "main": "dist/index.js",

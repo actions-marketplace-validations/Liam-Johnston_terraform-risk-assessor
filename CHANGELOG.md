@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## 1.3.0 (2026-04-27)
+
+
+### Features
+
+* updated version in readme ([694c7ff](https://github.com/Liam-Johnston/terraform-risk-assessor/commit/694c7ff3a4d219f0f4e8d62db4eda56cf9e517d0))
+
 ## 1.2.1 (2026-04-27)
 
 
