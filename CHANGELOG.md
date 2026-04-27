@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## 1.5.0 (2026-04-27)
+
+
+### Features
+
+* bump action-gh-release version ([75cd5a1](https://github.com/Liam-Johnston/terraform-risk-assessor/commit/75cd5a187cf275a8c5824621db14827eaec72b02))
+
 ## 1.4.0 (2026-04-27)
 
 
