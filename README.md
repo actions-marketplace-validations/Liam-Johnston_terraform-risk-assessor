@@ -2,6 +2,12 @@
 
 AI-powered risk assessment for Terraform plan changes. GitHub Action that analyzes infrastructure modifications using OpenAI, Anthropic, or Gemini and comments the risk level directly on your PR.
 
+## Use this prompt to install this in your project
+
+```
+Please incorporate https://github.com/Liam-Johnston/terraform-risk-assessor into this projects CI flow
+```
+
 ## How it works
 
 1. You run `terraform plan` and convert it to JSON with `terraform show -json`
