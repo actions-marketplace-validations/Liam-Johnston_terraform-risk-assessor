@@ -1,4 +1,5 @@
 import { z } from "zod";
+import * as core from "@actions/core";
 
 const ProviderName = z.enum(["openai", "anthropic", "gemini"]);
 type ProviderName = z.infer<typeof ProviderName>;
@@ -42,6 +43,10 @@ const createOpenAIProvider = (apiKey: string, model: string): AIProvider => ({
     }
 
     const data = await res.json();
+    const usage = data.usage;
+    if (usage) {
+      core.info(`Token usage — input: ${usage.prompt_tokens}, output: ${usage.completion_tokens}, total: ${usage.total_tokens}`);
+    }
     return { content: data.choices[0].message.content };
   },
 });
@@ -71,6 +76,10 @@ const createAnthropicProvider = (apiKey: string, model: string): AIProvider => (
     }
 
     const data = await res.json();
+    const usage = data.usage;
+    if (usage) {
+      core.info(`Token usage — input: ${usage.input_tokens}, output: ${usage.output_tokens}, total: ${usage.input_tokens + usage.output_tokens}`);
+    }
     return { content: data.content[0].text };
   },
 });
@@ -96,6 +105,10 @@ const createGeminiProvider = (apiKey: string, model: string): AIProvider => ({
     }
 
     const data = await res.json();
+    const usage = data.usageMetadata;
+    if (usage) {
+      core.info(`Token usage — input: ${usage.promptTokenCount}, output: ${usage.candidatesTokenCount}, total: ${usage.totalTokenCount}`);
+    }
     return { content: data.candidates[0].content.parts[0].text };
   },
 });
